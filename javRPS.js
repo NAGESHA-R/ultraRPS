@@ -1,6 +1,5 @@
 let ado=document.querySelector('.bAudio');
         ado.volume=0.05;
-
     let rock = document.querySelector('.rock');
     let paper = document.querySelector('.paper');
     let scissor = document.querySelector('.scissor');
@@ -23,14 +22,32 @@ let ado=document.querySelector('.bAudio');
         let value=event.key;
         switch (value) {
             case "s":
-                rockHandle();
+                if(wcount===10 || lcount===10 || tcount===10)
+                {
+                    alert("You can't play the game")
+                }
+                else{
+                    rockHandle();
+                }
                 break;
             case "d":
+                if(wcount===10 || lcount===10 || tcount===10)
+                {
+                    alert("You can't play the game")
+                }
+                else{
                 paperHandle();
+                }
                 break;
 
             case "f":
+                if(wcount===10 || lcount===10 || tcount===10)
+                {
+                    alert("You can't play the game")
+                }
+                else{
                 scissorHandle();
+                }
                 break;
 
             default: console.log("game over");
@@ -43,7 +60,14 @@ let ado=document.querySelector('.bAudio');
         window.location.reload(true);
     }
     function rockHandle() {
-        document.querySelector(".playerSide").setAttribute("src",rocksource);
+        if(wcount===10 || lcount===10 || tcount===10)
+        {
+            alert("You can't play the game")
+        }
+        else if(wcount!==10 || lcount!==10 || tcount!==10)
+        {
+            document.querySelector(".playerSide").setAttribute("src",rocksource);
+        }
         if (wcount < 10 && lcount < 10 && tcount < 10) {
             rockAudio.play();
             let randomNumber = Math.random();
@@ -97,7 +121,15 @@ let ado=document.querySelector('.bAudio');
 
     }
     function paperHandle() {
-        document.querySelector(".playerSide").setAttribute("src",papersource);
+        if(wcount===10 || lcount===10 || tcount===10)
+        {
+            alert("You can't play the game")
+        }
+        else if(wcount!==10 || lcount!==10 || tcount!==10)
+        {
+            document.querySelector(".playerSide").setAttribute("src",papersource);
+        }
+
         if (wcount < 10 && lcount < 10 && tcount < 10) {
             paperAudio.play();
             let randomNumber = Math.random();
@@ -153,7 +185,15 @@ let ado=document.querySelector('.bAudio');
         }
     }
     function scissorHandle() {
-        document.querySelector(".playerSide").setAttribute("src",scissorsource);
+        if(wcount===10 || lcount===10 || tcount===10)
+        {
+            alert("You can't play the game")
+        }
+        else if(wcount!==10 || lcount!==10 || tcount!==10)
+        {
+            document.querySelector(".playerSide").setAttribute("src",scissorsource);
+        }
+        
         if (wcount < 10 && lcount < 10 && tcount < 10) {
             scissorAudio.play();
             let randomNumber = Math.random();
